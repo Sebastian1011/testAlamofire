@@ -11,6 +11,7 @@ import Alamofire
 
 class ViewController: UIViewController {
 
+    var token:String!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,12 +19,11 @@ class ViewController: UIViewController {
     }
     
     func testAlamofire(){
-        Alamofire.request(.GET, "http://httpbin.org/get", parameters: ["foo": "bar"])
-            .responseData { response in
-                print(response.request)
-                print(response.response)
-                print(response.result)
-        }
+        Alamofire.request(.GET, "http://www.tingdao.me:8390/auth/login")
+            .responseString { response in
+                self.token = response.result.value
+                print(self.token)
+            }
     }
 
     override func didReceiveMemoryWarning() {
