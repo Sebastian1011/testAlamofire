@@ -14,8 +14,21 @@ class ViewController: UIViewController {
     let email = "test1008@tingdao.me"
     let password = "123456"
     let password_confirmation = "123456"
+    let newPassword = "246801"
     let dev = "iOS"
     let urlString = "http://www.tingdao.me:8390/auth/register"
+    let loginUrl = "http://www.tingdao.me:8390/auth/login"
+    let changpwdUrl = "http://www.tingdao.me:8390/api/changepwd"
+    let logoutUrl = "http://www.tingdao.me:8390/auth/logout"
+    let verifyPhoneUrl = "http://www.tingdao.me:8390/api/verifyphone"
+    let previewUrl = "http://www.tingdao.me:8390/api/preview"
+    let checkuserUrl = "http://www.tingdao.me:8390/api/checkuser"
+    let savesrtUrl = "http://www.tingdao.me:8390/api/savesrt"
+    let userphotoUrl = "http://www.tingdao.me:8390/api/userphoto"
+    let userfileUrl = "http://www.tingdao.me:8390/api/userfile"
+    let genfileUrl = "http://www.tingdao.me:8390/api/genfile"
+    let recentfile = "http://www.tingdao.me:8390/api/recentfile"
+    
     
     @IBOutlet weak var button: UIButton!
 
@@ -36,6 +49,28 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func loginButton(sender: AnyObject) {
+        loginPost(loginUrl)
+        
+    }
+    
+    @IBAction func logoutButton(sender: AnyObject) {
+        logout(logoutUrl)
+    }
+    
+    @IBAction func verifyPhone(sender: AnyObject) {
+        verifyPhoneButton(verifyPhoneUrl)
+    }
+    
+    @IBAction func previewButton(sender: AnyObject) {
+        previewsButton(previewUrl)
+    }
+    
+    @IBAction func checkuserButton(sender: AnyObject) {
+        checkuser(checkuserUrl)
+    }
+    
+    
     func testAlamofire(urlString:String){
         Alamofire.request(.GET, urlString)
             .responseString { response in
@@ -43,6 +78,107 @@ class ViewController: UIViewController {
                 print(self.token)
         }
     }
+    
+    
+    
+    //login
+    func loginPost(urlString: String){
+        let parameter = [
+            "_token":self.token,
+            "email":self.email,
+            "password":self.password
+        ]
+        Alamofire.request(.POST, urlString, parameters:parameter)
+            .responseString { response in
+                if response.result.isSuccess{
+                    
+                    print(response.result.value)
+                }else{
+                    print(response.result.error)
+                }
+                
+        }
+        
+    }
+    
+    //logout
+    func logout(urlString:String){
+        Alamofire.request(.GET, urlString)
+            .responseString{ response in
+                if response.result.isSuccess{
+                    print(response.result.value)
+                }else{
+                    print(response.result.error)
+                }
+        }
+    }
+    
+    //verifyPhone
+    func verifyPhoneButton(urlString:String){
+        let parameter = [
+            "phone": "15618564259"
+        ]
+        Alamofire.request(.POST, urlString, parameters:parameter)
+            .responseString{ response in
+                if  response.result.isSuccess{
+                    print(response.result.value)
+                }else{
+                    print(response.result.error)
+                }
+                
+        }
+    }
+    
+    //change pass word
+    func changePwd(urlString:String){
+        let parameter = [
+            "_token":self.token,
+            "password":self.password,
+            "new_password":self.newPassword
+        ]
+        Alamofire.request(.POST, urlString, parameters:parameter)
+            .responseString{ response in
+                if response.result.isSuccess{
+                    print(response.result.value)
+                }else {
+                    print(response.result.value)
+                }
+    }
+    }
+    
+    //user preview
+    func previewsButton(urlString:String){
+        let parameter = [
+            "_token":self.token
+        ]
+        Alamofire.request(.POST, urlString, parameters:parameter)
+            .responseJSON{ response in
+                
+                if response.result.isSuccess{
+                    print(response.data)
+                }else{
+                    print(response.result.error)
+                }
+                
+        }
+    }
+    
+    //check user 
+    func checkuser(urlString:String){
+        
+        Alamofire.request(.POST, urlString)
+            .responseJSON{ response in
+                
+                if response.result.isSuccess{
+                    print(response.result.value)
+                }else{
+                    print(response.result.error)
+                }
+                
+        }
+    }
+    
+    
     //Making a Request
     /*
     func example(){

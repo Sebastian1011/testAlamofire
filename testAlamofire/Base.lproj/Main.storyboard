@@ -16,17 +16,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELE-uv-rUF">
-                                <rect key="frame" x="285" y="237" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELE-uv-rUF">
+                                <rect key="frame" x="285" y="34" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="注册"/>
                                 <connections>
                                     <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZOO-kg-SCv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpt-X2-470">
+                                <rect key="frame" x="283" y="86" width="34" height="30"/>
+                                <animations/>
+                                <state key="normal" title="login"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oBp-C7-baP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETG-eu-q4e">
+                                <rect key="frame" x="279" y="133" width="44" height="30"/>
+                                <animations/>
+                                <state key="normal" title="logout"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UYG-j2-ghv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDr-4U-A4Y">
+                                <rect key="frame" x="259" y="182" width="82" height="30"/>
+                                <animations/>
+                                <state key="normal" title="verifyphone"/>
+                                <connections>
+                                    <action selector="verifyPhone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EMg-6p-LIv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uem-Ze-DKx">
+                                <rect key="frame" x="273" y="236" width="54" height="30"/>
+                                <animations/>
+                                <state key="normal" title="preview"/>
+                                <connections>
+                                    <action selector="previewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QWu-gn-sKM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0l-y9-idW">
+                                <rect key="frame" x="264" y="285" width="72" height="30"/>
+                                <animations/>
+                                <state key="normal" title="checkuser"/>
+                                <connections>
+                                    <action selector="checkuserButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qsb-Jj-6eM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ELE-uv-rUF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E2W-1b-17s"/>
+                            <constraint firstItem="cDr-4U-A4Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fbl-kQ-Qba"/>
+                            <constraint firstItem="m0l-y9-idW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mk2-p2-o3j"/>
+                            <constraint firstItem="hpt-X2-470" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hcH-t3-vOj"/>
+                            <constraint firstItem="ETG-eu-q4e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mkM-0S-nLc"/>
+                            <constraint firstItem="Uem-Ze-DKx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uxK-Pt-KWO"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="button" destination="ELE-uv-rUF" id="15Z-Vm-lgb"/>
@@ -34,6 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="460" y="274"/>
         </scene>
     </scenes>
 </document>
